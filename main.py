@@ -23,11 +23,19 @@ import pandas as pd
 #print(df.loc[56, 'Healthy life expectancy'])
 #print(df[df['Healthy life expectancy'] > 0.7])
 
-df = pd.read_csv('hh.csv')
-print(df)
-# df['Test'] = [new for new in range(29)]
+# df = pd.read_csv('hh.csv')
 # print(df)
-# df.drop('Test', axis=1, inplace=True)
+# # df['Test'] = [new for new in range(29)]
+# # print(df)
+# # df.drop('Test', axis=1, inplace=True)
+# # print(df)
+# df.drop(28, axis=0, inplace=True)
 # print(df)
-df.drop(28, axis=0, inplace=True)
-print(df)
+
+df = pd.read_csv('animal.csv')
+#print(df.head())
+#df.dropna(inplace=True)
+df.fillna(0, inplace=True)
+#group = df.groupby('Пища')['Средняя продолжительность жизни'].mean()
+#print(group)
+df.to_csv('output.csv', index=False)
